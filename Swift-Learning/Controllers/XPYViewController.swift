@@ -8,17 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class XPYViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.backgroundColor = UIColor.green
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.rowHeight = 50
     }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if (UserDefaults.standard.string(forKey: "XPYUserID") == nil) {
+            let loginController = UIStoryboard.init(name: "XPYLogin", bundle: nil).instantiateViewController(withIdentifier: "XPYLoginController")
+            self.present(loginController, animated: true, completion: nil)
+        }
+    }
+}
+
+//MARK: Table view data source
+extension XPYViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10;
     }
@@ -30,6 +39,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell?.backgroundColor = UIColor.red
         return cell!
     }
+}
 
+//MARK: Table view delegate
+extension XPYViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        NSLog("点击了列表");
+    }
 }
 

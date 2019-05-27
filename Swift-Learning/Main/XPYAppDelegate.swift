@@ -9,13 +9,18 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class XPYAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
+        let mainController = UIStoryboard(name: "XPYMain", bundle: nil).instantiateViewController(withIdentifier: "XPYMainController")
+        let navigationController = UINavigationController.init(rootViewController: mainController)
+        self.window?.rootViewController = navigationController
         return true
     }
 

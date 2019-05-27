@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yQl-IM-1lh">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="RoR-mQ-edX">
+            <objects>
+                <navigationController id="yQl-IM-1lh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uhx-F6-b2A">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6qa-pw-gpM" kind="relationship" relationship="rootViewController" id="BOJ-Xi-rUR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ae5-ha-Tu8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633" y="-155"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="6BT-Ig-dfq">
+            <objects>
+                <viewController storyboardIdentifier="XPYLoginController" id="6qa-pw-gpM" customClass="XPYLoginViewController" customModule="Swift_Learning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNm-yo-0gp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gR2-AR-3om">
+                                <rect key="frame" x="100" y="138" width="214" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5SL-Rp-mBM">
+                                <rect key="frame" x="100" y="198" width="214" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ST8-DT-PWh">
+                                <rect key="frame" x="191.5" y="258" width="31" height="30"/>
+                                <state key="normal" title="登录"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="6qa-pw-gpM" eventType="touchUpInside" id="FwF-lm-Uf2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gR2-AR-3om" firstAttribute="leading" secondItem="R5D-5g-gLf" secondAttribute="leading" constant="100" id="542-JA-WJD"/>
+                            <constraint firstItem="ST8-DT-PWh" firstAttribute="top" secondItem="5SL-Rp-mBM" secondAttribute="bottom" constant="30" id="5O1-Ri-NP3"/>
+                            <constraint firstItem="gR2-AR-3om" firstAttribute="centerX" secondItem="RNm-yo-0gp" secondAttribute="centerX" id="bd2-kR-RRO"/>
+                            <constraint firstItem="gR2-AR-3om" firstAttribute="top" secondItem="R5D-5g-gLf" secondAttribute="top" constant="50" id="kgX-TK-eLO"/>
+                            <constraint firstItem="5SL-Rp-mBM" firstAttribute="centerX" secondItem="RNm-yo-0gp" secondAttribute="centerX" id="lQE-8B-6mh"/>
+                            <constraint firstItem="R5D-5g-gLf" firstAttribute="trailing" secondItem="gR2-AR-3om" secondAttribute="trailing" constant="100" id="qbQ-bV-a2a"/>
+                            <constraint firstItem="5SL-Rp-mBM" firstAttribute="leading" secondItem="R5D-5g-gLf" secondAttribute="leading" constant="100" id="si6-Gw-2LV"/>
+                            <constraint firstItem="5SL-Rp-mBM" firstAttribute="top" secondItem="gR2-AR-3om" secondAttribute="bottom" constant="30" id="soX-TU-rJg"/>
+                            <constraint firstItem="ST8-DT-PWh" firstAttribute="centerX" secondItem="RNm-yo-0gp" secondAttribute="centerX" id="vwk-jA-l58"/>
+                            <constraint firstItem="R5D-5g-gLf" firstAttribute="trailing" secondItem="5SL-Rp-mBM" secondAttribute="trailing" constant="100" id="zvD-hF-Uyl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="R5D-5g-gLf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GQ9-MB-HIX"/>
+                    <connections>
+                        <outlet property="loginButton" destination="ST8-DT-PWh" id="cQa-Hz-mVB"/>
+                        <outlet property="passwordTextField" destination="5SL-Rp-mBM" id="1VW-xu-TDY"/>
+                        <outlet property="usernameTextField" destination="gR2-AR-3om" id="j0n-CZ-WYI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jjk-eH-Dmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="199" y="-155"/>
+        </scene>
+    </scenes>
+</document>
