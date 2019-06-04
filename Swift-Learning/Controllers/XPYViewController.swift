@@ -10,12 +10,16 @@ import UIKit
 
 class XPYViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tableView.backgroundColor = UIColor.green
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.rowHeight = 50
+        
+        self.loadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -23,6 +27,10 @@ class XPYViewController: UIViewController {
             let loginController = UIStoryboard.init(name: "XPYLogin", bundle: nil).instantiateViewController(withIdentifier: "XPYLoginController")
             self.present(loginController, animated: true, completion: nil)
         }
+    }
+    
+    func loadData() {
+        
     }
 }
 
