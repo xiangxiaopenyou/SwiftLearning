@@ -15,6 +15,7 @@
 		6C348BA5222D4F2900425185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C348BA3222D4F2900425185 /* LaunchScreen.storyboard */; };
 		6C348BB0222D4F2900425185 /* Swift_LearningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C348BAF222D4F2900425185 /* Swift_LearningTests.swift */; };
 		6C348BBB222D4F2900425185 /* Swift_LearningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C348BBA222D4F2900425185 /* Swift_LearningUITests.swift */; };
+		6CE85CE022C0B8CA009C5D20 /* XPYMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE85CDF22C0B8CA009C5D20 /* XPYMainTabBarController.swift */; };
 		6CEC300422968D8B0001B984 /* XPYLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC300322968D8B0001B984 /* XPYLogin.storyboard */; };
 		6CEC30062297BF300001B984 /* XPYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC30052297BF300001B984 /* XPYLoginViewController.swift */; };
 		6CEC3009229B7CE00001B984 /* XPYUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC3008229B7CE00001B984 /* XPYUtils.swift */; };
@@ -53,6 +54,7 @@
 		6C348BB6222D4F2900425185 /* Swift-LearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-LearningUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C348BBA222D4F2900425185 /* Swift_LearningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_LearningUITests.swift; sourceTree = "<group>"; };
 		6C348BBC222D4F2900425185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CE85CDF22C0B8CA009C5D20 /* XPYMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYMainTabBarController.swift; sourceTree = "<group>"; };
 		6CEC300322968D8B0001B984 /* XPYLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = XPYLogin.storyboard; sourceTree = "<group>"; };
 		6CEC30052297BF300001B984 /* XPYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYLoginViewController.swift; sourceTree = "<group>"; };
 		6CEC3008229B7CE00001B984 /* XPYUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYUtils.swift; sourceTree = "<group>"; };
@@ -93,7 +95,6 @@
 				167CE752A0E2C7A8C1FE09E7 /* Pods-Swift-Learning.debug.xcconfig */,
 				AAE76794656B49C6194D9829 /* Pods-Swift-Learning.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -158,6 +159,7 @@
 			children = (
 				6C348B9C222D4F2700425185 /* XPYViewController.swift */,
 				6CEC30052297BF300001B984 /* XPYLoginViewController.swift */,
+				6CE85CDF22C0B8CA009C5D20 /* XPYMainTabBarController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -397,6 +399,7 @@
 			files = (
 				6CEC30062297BF300001B984 /* XPYLoginViewController.swift in Sources */,
 				6C348B9D222D4F2700425185 /* XPYViewController.swift in Sources */,
+				6CE85CE022C0B8CA009C5D20 /* XPYMainTabBarController.swift in Sources */,
 				6C348B9B222D4F2700425185 /* XPYAppDelegate.swift in Sources */,
 				6CED2026229BCAC10027DB94 /* XPYHTTPManager.swift in Sources */,
 				6CEC3009229B7CE00001B984 /* XPYUtils.swift in Sources */,

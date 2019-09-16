@@ -18,9 +18,8 @@ class XPYAppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow.init(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
-        let mainController = UIStoryboard(name: "XPYMain", bundle: nil).instantiateViewController(withIdentifier: "XPYMainController")
-        let navigationController = UINavigationController.init(rootViewController: mainController)
-        self.window?.rootViewController = navigationController
+        let mainTabBarController = UIStoryboard.init(name: "XPYMain", bundle: nil).instantiateViewController(withIdentifier: "XPYMainTabBarControllerID")
+        self.window?.rootViewController = mainTabBarController
         return true
     }
 

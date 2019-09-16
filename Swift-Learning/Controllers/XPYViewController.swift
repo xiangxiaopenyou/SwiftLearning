@@ -18,7 +18,6 @@ class XPYViewController: UIViewController {
         tableView.backgroundColor = UIColor.green
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.rowHeight = 50
-        
         self.loadData()
     }
     override func viewDidAppear(_ animated: Bool) {

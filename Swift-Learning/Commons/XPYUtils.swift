@@ -17,4 +17,10 @@ class XPYUtils: NSObject {
         }
         return false
     }
+    public func isNullObject(_ object: AnyObject) -> Bool {
+        if (object.count <= 0) {
+            return true
+        }
+        return false;
+    }
 }
