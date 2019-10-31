@@ -31,16 +31,16 @@ typealias XPYResponceFailure = (_ error: AnyObject) -> Void                 //�
 typealias XPYNetworkingStatus = (_ networkStatus: XPYNetworkStatus) -> Void //网络状况闭包
 
 class XPYHTTPManager: NSObject {
-    private var sharedInstance = XPYHTTPManager()
-    private override init() {
-    }
+    static let sharedInstance = XPYHTTPManager()
+//    private override init() {
+//    }
     private lazy var manager: SessionManager = {
         let sessionConfig: URLSessionConfiguration = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = 30
         sessionConfig.httpAdditionalHeaders = xpyHttpHeaders
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             //正式环境证书配置
-            baseServerURL: .pinCertificates(certificates: ServerTrustPolicy.certificates(), validateCertificateChain: true, validateHost: true),
+            //baseServerURL: .pinCertificates(certificates: ServerTrustPolicy.certificates(), validateCertificateChain: true, validateHost: true),
             //测试环境不需要验证
             baseServerURL: .disableEvaluation
         ]
@@ -52,6 +52,7 @@ class XPYHTTPManager: NSObject {
     
     //请求头设置
     private var xpyHttpHeaders: [String: String]? {
+//        return ["content-type" : "application/json", "Accept" : "text/html; charset=UTF-8"]
         guard let token = UserDefaults.standard.string(forKey: "UserToken") else { return nil }
         return ["token": token]
     }
@@ -76,8 +77,7 @@ class XPYHTTPManager: NSObject {
             print("URL为空")
             return
         }
-        var urlString: String = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        urlString = absoluteURLStringWithPath(path: urlString)
+        let urlString = absoluteURLStringWithPath(path: url)
         if method == XPYRequestMethod.requestMethodGet {    //GET
             getRequestWith(url: urlString, params: params, success: success, failure: failure)
         } else {                                            //POST
@@ -87,7 +87,14 @@ class XPYHTTPManager: NSObject {
     
     //GET请求
     private func getRequestWith(url: String, params: [String: Any]?, success: @escaping XPYResponceSuccess, failure: @escaping XPYResponceFailure) {
+        
+        
         manager.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in
+            
+            print(response.request!)    // original URL request
+            print(response.response!) // HTTP URL response
+            print(response.data!)          // server data
+            print(response.result)          // result of response serialization
             switch response.result {
             case .success:
                 if let result = response.result.value as? [String: Any] {
@@ -148,7 +155,7 @@ extension XPYHTTPManager {
 
 //MARK: 获取完整请求链接
 extension XPYHTTPManager {
-    public func absoluteURLStringWithPath(path: String) -> String {
+    func absoluteURLStringWithPath(path: String) -> String {
         var baseURLString: String! = baseServerURL
         var needHTTPS = false
         #if DEBUG
@@ -159,10 +166,12 @@ extension XPYHTTPManager {
         
         baseURLString = needHTTPS ? "https://" : "http://" + baseURLString + path
         
-        if !UserDefaults.standard.string(forKey: "UserId")!.isEmpty && !UserDefaults.standard.string(forKey: "UserToken")!.isEmpty {
-            baseURLString = baseURLString + "&user_id=" + UserDefaults.standard.string(forKey: "UserId")! + "&user_token=" + UserDefaults.standard.string(forKey: "UserToken")!
+        let userId = UserDefaults.standard.string(forKey: "UserId")
+        let userToken = UserDefaults.standard.string(forKey:"UserToken")
+        if userId != nil && userToken != nil {
+            baseURLString = baseURLString + "?user_id=" + UserDefaults.standard.string(forKey: "UserId")! + "&user_token=" + UserDefaults.standard.string(forKey: "UserToken")!
         } else {
-            baseURLString = baseURLString + "&user_id=0&user_token=0"
+            baseURLString = baseURLString + "?user_id=0&user_token=0"
         }
         //let uuid = UUID().uuidString
         
@@ -170,8 +179,11 @@ extension XPYHTTPManager {
         if let channelId = UserDefaults.standard.string(forKey: "ChannelId") {
             baseURLString = baseURLString + "&channelid=" + channelId
         }
+        baseURLString = baseURLString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         return baseURLString
     }
     
 }
+
+
 

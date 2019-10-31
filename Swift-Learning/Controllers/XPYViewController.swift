@@ -22,10 +22,15 @@ class XPYViewController: UIViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if (UserDefaults.standard.string(forKey: "XPYUserID") == nil) {
-            let loginController = UIStoryboard.init(name: "XPYLogin", bundle: nil).instantiateViewController(withIdentifier: "XPYLoginController")
-            self.present(loginController, animated: true, completion: nil)
-        }
+//        if (UserDefaults.standard.string(forKey: "XPYUserID") == nil) {
+//            let loginController = UIStoryboard.init(name: "XPYLogin", bundle: nil).instantiateViewController(withIdentifier: "XPYLoginController")
+//            if #available(iOS 13.0, *) {
+//                loginController.modalPresentationStyle = .automatic
+//            } else {
+//                // Fallback on earlier versions
+//            }
+//            self.present(loginController, animated: true, completion: nil)
+//        }
     }
     
     func loadData() {
