@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZId-gg-3eF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZId-gg-3eF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -55,6 +55,7 @@
                     <connections>
                         <segue destination="rEm-J9-IHD" kind="relationship" relationship="viewControllers" id="5um-YA-7VX"/>
                         <segue destination="Eil-zY-i18" kind="relationship" relationship="viewControllers" id="CwC-qt-6hd"/>
+                        <segue destination="0fa-To-Wv4" kind="relationship" relationship="viewControllers" id="ETT-Pz-eYX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvY-Qp-ysd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -79,7 +80,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKh-6z-EMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-867" y="98"/>
+            <point key="canvasLocation" x="-123" y="-125"/>
         </scene>
         <!--测试-->
         <scene sceneID="q1F-Bz-OId">
@@ -104,7 +105,53 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="103" y="98"/>
+            <point key="canvasLocation" x="-175" y="-20"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="tI5-81-DsF">
+            <objects>
+                <tableViewController id="Hf7-2R-iAA" customClass="XPYMineTableViewController" customModule="Swift_Learning" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EKw-m6-Dzf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="kXPYMineTableCell" id="hTF-b9-aEg">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hTF-b9-aEg" id="YKX-gB-CzG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Hf7-2R-iAA" id="VW9-kg-mMo"/>
+                            <outlet property="delegate" destination="Hf7-2R-iAA" id="YtS-kM-vUo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我的" id="mea-l2-KtG"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7C-8Z-41p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-186" y="179"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="mqH-PH-X1U">
+            <objects>
+                <navigationController id="0fa-To-Wv4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="我的" id="RgH-9n-f1M"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j2u-SM-hgB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Hf7-2R-iAA" kind="relationship" relationship="rootViewController" id="FvV-XX-JUk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Vv-B6-7dr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-909" y="76"/>
         </scene>
         <!--首页-->
         <scene sceneID="wTB-Tz-fLp">
