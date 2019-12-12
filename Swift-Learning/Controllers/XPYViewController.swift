@@ -8,29 +8,32 @@
 
 import UIKit
 
+let kXPYHomepageTableViewCellIdentifier = "XPYHomepageTableViewCellIdentifier"
+
+
 class XPYViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+//    lazy var mainTableView: UITableView? = {
+//        let tempTableView = UITableView(frame: CGRect.zero, style: .plain)
+//        tempTableView.delegate = self
+//        tempTableView.dataSource = self
+//        tempTableView.backgroundColor = UIColor.white
+//        return tempTableView
+//    }()
     
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
         tableView.backgroundColor = UIColor.green
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.rowHeight = 50
+        self.title = "分类"
         self.loadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        if (UserDefaults.standard.string(forKey: "XPYUserID") == nil) {
-//            let loginController = UIStoryboard.init(name: "XPYLogin", bundle: nil).instantiateViewController(withIdentifier: "XPYLoginController")
-//            if #available(iOS 13.0, *) {
-//                loginController.modalPresentationStyle = .automatic
-//            } else {
-//                // Fallback on earlier versions
-//            }
-//            self.present(loginController, animated: true, completion: nil)
-//        }
     }
     
     func loadData() {
@@ -44,11 +47,10 @@ extension XPYViewController: UITableViewDataSource {
         return 10;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
+        var cell = tableView.dequeueReusableCell(withIdentifier: kXPYHomepageTableViewCellIdentifier)
         if (cell == nil) {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+            cell = XPYHomepageTableViewCell(style: .default, reuseIdentifier: kXPYHomepageTableViewCellIdentifier)
         }
-        cell?.backgroundColor = UIColor.red
         return cell!
     }
 }
@@ -56,8 +58,8 @@ extension XPYViewController: UITableViewDataSource {
 //MARK: Table view delegate
 extension XPYViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        NSLog("点击了列表");
+        //tableView.deselectRow(at: indexPath, animated: true)
+        print("点击了列表")
     }
 }
 

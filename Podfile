@@ -4,4 +4,7 @@ inhibit_all_warnings!
 
 target 'Swift-Learning' do
   pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'SnapKit'
+  pod 'ObjectMapper'
 end
