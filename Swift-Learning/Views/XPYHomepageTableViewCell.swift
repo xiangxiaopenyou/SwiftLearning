@@ -11,7 +11,6 @@ import SnapKit
 
 class XPYHomepageTableViewCell: UITableViewCell {
 
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupContentView()
@@ -22,7 +21,7 @@ class XPYHomepageTableViewCell: UITableViewCell {
     }
     
     //MARK: Lazy load
-    lazy var nameLabel: UILabel = {
+    lazy public var nameLabel: UILabel = {
         let name = UILabel.init()
         name.textColor = UIColor.black
         name.font = UIFont.systemFont(ofSize: 14)

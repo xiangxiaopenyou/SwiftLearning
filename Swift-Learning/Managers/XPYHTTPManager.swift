@@ -32,8 +32,6 @@ typealias XPYNetworkingStatus = (_ networkStatus: XPYNetworkStatus) -> Void //ç½
 
 class XPYHTTPManager: NSObject {
     static let sharedInstance = XPYHTTPManager()
-//    private override init() {
-//    }
     private lazy var manager: SessionManager = {
         let sessionConfig: URLSessionConfiguration = URLSessionConfiguration.default
         sessionConfig.timeoutIntervalForRequest = 30
@@ -98,9 +96,7 @@ class XPYHTTPManager: NSObject {
             switch response.result {
             case .success:
                 if let result = response.result.value as? [String: Any] {
-                    if result["status"] as? Int == 200 {
-                        success(result as AnyObject)
-                    }
+                    success(result as AnyObject)
                 }
             case .failure(let err):
                 failure(err as AnyObject)

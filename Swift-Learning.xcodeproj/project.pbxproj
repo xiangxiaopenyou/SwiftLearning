@@ -12,6 +12,7 @@
 		6C094E4C23692EB5008EDA86 /* XPYTest2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C094E4B23692EB5008EDA86 /* XPYTest2ViewController.swift */; };
 		6C09D4E323A0BB6E0054303D /* XPYHomepageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09D4E223A0BB6E0054303D /* XPYHomepageTableViewCell.swift */; };
 		6C12785E23307AAF007CC4A6 /* XPYPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C12785D23307AAF007CC4A6 /* XPYPerson.swift */; };
+		6C19335E23B1EF5F00E3A0CA /* XPYTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19335D23B1EF5F00E3A0CA /* XPYTestModel.swift */; };
 		6C348B9B222D4F2700425185 /* XPYAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C348B9A222D4F2700425185 /* XPYAppDelegate.swift */; };
 		6C348B9D222D4F2700425185 /* XPYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C348B9C222D4F2700425185 /* XPYViewController.swift */; };
 		6C348BA0222D4F2700425185 /* XPYMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C348B9E222D4F2700425185 /* XPYMain.storyboard */; };
@@ -50,6 +51,7 @@
 		6C094E4B23692EB5008EDA86 /* XPYTest2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYTest2ViewController.swift; sourceTree = "<group>"; };
 		6C09D4E223A0BB6E0054303D /* XPYHomepageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYHomepageTableViewCell.swift; sourceTree = "<group>"; };
 		6C12785D23307AAF007CC4A6 /* XPYPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYPerson.swift; sourceTree = "<group>"; };
+		6C19335D23B1EF5F00E3A0CA /* XPYTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYTestModel.swift; sourceTree = "<group>"; };
 		6C348B97222D4F2700425185 /* Swift-Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C348B9A222D4F2700425185 /* XPYAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYAppDelegate.swift; sourceTree = "<group>"; };
 		6C348B9C222D4F2700425185 /* XPYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				6C12785D23307AAF007CC4A6 /* XPYPerson.swift */,
+				6C19335D23B1EF5F00E3A0CA /* XPYTestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				6CEC30062297BF300001B984 /* XPYLoginViewController.swift in Sources */,
 				6C348B9D222D4F2700425185 /* XPYViewController.swift in Sources */,
 				6C094E4C23692EB5008EDA86 /* XPYTest2ViewController.swift in Sources */,
+				6C19335E23B1EF5F00E3A0CA /* XPYTestModel.swift in Sources */,
 				6CE85CE022C0B8CA009C5D20 /* XPYMainTabBarController.swift in Sources */,
 				6C09D4E323A0BB6E0054303D /* XPYHomepageTableViewCell.swift in Sources */,
 				6CEAE7C12370266C00E6C43E /* XPYMineTableViewController.swift in Sources */,

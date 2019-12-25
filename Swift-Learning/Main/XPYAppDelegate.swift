@@ -20,14 +20,7 @@ class XPYAppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         let mainTabBarController = UIStoryboard.init(name: "XPYMain", bundle: nil).instantiateViewController(withIdentifier: "XPYMainTabBarControllerID")
         self.window?.rootViewController = mainTabBarController
-
-        //网络请求测试
-//        let params = ["action" : "db-home", "page" : 1] as [String : Any]
-//        XPYHTTPManager.sharedInstance.getWith(url: "/book-city", params: params, success: { (response) in
-//
-//        }) { (error) in
-//
-//        }
+        
         return true
     }
 

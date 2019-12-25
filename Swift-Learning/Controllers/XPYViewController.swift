@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import ObjectMapper
 
 let kXPYHomepageTableViewCellIdentifier = "XPYHomepageTableViewCellIdentifier"
 
-
 class XPYViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    var dataList: Array<XPYTestModel>! = []
     
 //    lazy var mainTableView: UITableView? = {
 //        let tempTableView = UITableView(frame: CGRect.zero, style: .plain)
@@ -26,9 +27,6 @@ class XPYViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundColor = UIColor.green
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        tableView.rowHeight = 50
         self.title = "分类"
         self.loadData()
     }
@@ -37,20 +35,38 @@ class XPYViewController: UIViewController {
     }
     
     func loadData() {
-        
+        //网络请求测试
+        let params = ["action" : "class", "dir" : "1"] as [String : Any]
+        XPYHTTPManager.sharedInstance.getWith(url: "/book", params: params, success: { (response) in
+            self.dataList = Mapper<XPYTestModel>().mapArray(JSONObject: response["data"] as Any?)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }) { (error) in
+            
+        }
     }
 }
 
 //MARK: Table view data source
 extension XPYViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.dataList.count
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10;
+        let testModel: XPYTestModel = self.dataList[section]
+        return testModel.dataList!.count;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: kXPYHomepageTableViewCellIdentifier)
+        var cell: XPYHomepageTableViewCell? = tableView.dequeueReusableCell(withIdentifier: kXPYHomepageTableViewCellIdentifier) as? XPYHomepageTableViewCell
         if (cell == nil) {
             cell = XPYHomepageTableViewCell(style: .default, reuseIdentifier: kXPYHomepageTableViewCellIdentifier)
         }
+        //colorWithHexString测试
+        //cell?.backgroundColor = XPYUtils.colorWithHexString(hexString: "0x000000", alpha: 1)
+        let testModel: XPYTestModel = self.dataList[indexPath.section]
+        let testSubModel: XPYTestSubModel = testModel.dataList![indexPath.row]
+        cell!.nameLabel.text = testSubModel.typeName
         return cell!
     }
 }
