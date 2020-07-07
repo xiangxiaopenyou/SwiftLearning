@@ -18,13 +18,15 @@ class XPYLotteryViewController: UIViewController {
     /// 奖项数组
     private let lotteryItems = ["奖项1", "奖项2", "奖项3", "奖项4", "奖项5", "奖项6", "奖项7", "奖项8"]
     /// 默认选中第一项
-    private var selectedIndex = 0
+    private var selectedIndex: Int = 0
     /// 奖项按钮数组
     private var itemButtons: Array<UIButton>! = []
     /// 当前选中奖项按钮
     private var selectedButton: UIButton!
-    
+    /// 计数器
     private var timer: Timer!
+    /// 是否抽奖最后一圈
+    private var isLastCycle = false
     
     lazy var startButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -100,17 +102,72 @@ class XPYLotteryViewController: UIViewController {
     /// 开始抽奖
     /// - Parameter sender: startButton
     @objc private func startAction(_ sender: UIButton) {
+        sender.isEnabled = false
+        for (index, button) in itemButtons.enumerated() {
+            if index == selectedIndex {
+                button.isHighlighted = true
+                selectedButton = button
+            } else {
+                button.isHighlighted = false
+            }
+        }
+        firstCyclesLottery(sender)
+    }
+    
+    // MARK: Private methods
+    
+    /// 设置选中按钮
+    private func selectItem() {
+        if selectedButton != nil {
+            selectedButton.isHighlighted = false
+        }
+        selectedButton = itemButtons[selectedIndex]
+        selectedButton.isHighlighted = true
+    }
+    
+    
+    /// 抽奖开始快速转动圈
+    /// - Parameter sender: startButton
+    private func firstCyclesLottery(_ sender: UIButton) {
         weak var weakSelf = self
-//        timer = Timer.xpy_timer(1, true, { (timer: Timer) in
-//            print(weakSelf?.selectedIndex as Any)
-//            weakSelf?.selectedIndex += 1
-//        })
-//        RunLoop.current.add(timer, forMode: .common)
-        
-        timer = Timer.xpy_scheduledTimer(1, true, { (timer: Timer) in
-            print(weakSelf?.selectedIndex as Any)
-            weakSelf?.selectedIndex += 1
+        // 转动圈数
+        var cycleNumber = 0
+        timer = Timer.xpy_scheduledTimer(0.2, true, { (timer: Timer) in
+            // 前三圈的情况
+            if weakSelf?.selectedIndex == 7 {
+                weakSelf?.selectedIndex = 0
+                cycleNumber += 1
+                // 转动三圈
+                if (cycleNumber == 3) {
+                    // 进入最后慢速一圈
+                    weakSelf?.timer.invalidate()
+                    weakSelf?.isLastCycle = true
+                    weakSelf?.lastCycleLottery(sender)
+                }
+            } else {
+                weakSelf?.selectedIndex += 1
+            }
+            weakSelf?.selectItem()
         })
     }
-
+    
+    /// 抽奖最后一圈
+    /// - Parameter sender: startButton
+    private func lastCycleLottery(_ sender: UIButton) {
+        weak var weakSelf = self
+        // 随机抽奖结果
+        let randomResult: Int = Int(arc4random_uniform(8))
+        timer = Timer.xpy_scheduledTimer(0.5, true, { (timer: Timer) in
+            if weakSelf?.selectedIndex == randomResult {    // 抽奖完成
+                weakSelf?.timer.invalidate()
+                weakSelf?.timer = nil
+                weakSelf?.isLastCycle = false
+                sender.isEnabled = true
+                return
+            } else {
+                weakSelf?.selectedIndex += 1
+            }
+            weakSelf?.selectItem()
+        })
+    }
 }
