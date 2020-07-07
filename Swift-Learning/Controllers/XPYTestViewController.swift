@@ -31,17 +31,14 @@ class XPYTestViewController: UIViewController {
     @objc func pushAction() {
         let pushController = XPYTest2ViewController.init()
         pushController.hidesBottomBarWhenPushed = true
+        pushController.delegate = self
         navigationController?.pushViewController(pushController, animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+}
+
+extension XPYTestViewController: XPYTest2ViewControllerProtocol {
+    func test2DidPop() {
+        print("pop");
     }
-    */
-
 }

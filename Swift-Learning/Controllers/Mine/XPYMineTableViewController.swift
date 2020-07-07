@@ -8,16 +8,20 @@
 
 import UIKit
 
+private let kXPYMineTableCellIdentifierKey: String = "kXPYMineTableCellIdentifier"
+
 class XPYMineTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.register(XPYMineTableViewCell.classForCoder(), forCellReuseIdentifier: kXPYMineTableCellIdentifierKey)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
 
     // MARK: - Table view data source
@@ -31,10 +35,8 @@ class XPYMineTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "kXPYMineTableCell", for: indexPath)
-
-        cell.textLabel?.text = datasArray[indexPath.row]
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: kXPYMineTableCellIdentifierKey, for: indexPath) as! XPYMineTableViewCell
+        cell.setupTitle(titleString: datasArray[indexPath.row])
         return cell
     }
 
@@ -85,7 +87,7 @@ class XPYMineTableViewController: UITableViewController {
     
     
     // MARK: - Getters
-    var datasArray = ["头像", "个人信息", "设置"]
+    var datasArray: [String] = ["头像", "个人信息", "设置"]
     
 
 }

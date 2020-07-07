@@ -13,7 +13,8 @@ let kXPYHomepageTableViewCellIdentifier = "XPYHomepageTableViewCellIdentifier"
 
 class XPYViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var dataList: Array<XPYTestModel>! = []
+    //var dataList: Array<XPYTestModel>! = []
+    private let dataList = ["抽奖"]
     
 //    lazy var mainTableView: UITableView? = {
 //        let tempTableView = UITableView(frame: CGRect.zero, style: .plain)
@@ -27,8 +28,8 @@ class XPYViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "分类"
-        self.loadData()
+        self.title = "主页"
+        //self.loadData()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -38,7 +39,7 @@ class XPYViewController: UIViewController {
         //网络请求测试
         let params = ["action" : "class", "dir" : "1"] as [String : Any]
         XPYHTTPManager.sharedInstance.getWith(url: "/book", params: params, success: { (response) in
-            self.dataList = Mapper<XPYTestModel>().mapArray(JSONObject: response["data"] as Any?)
+            //self.dataList = Mapper<XPYTestModel>().mapArray(JSONObject: response["data"] as Any?)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -51,11 +52,14 @@ class XPYViewController: UIViewController {
 //MARK: Table view data source
 extension XPYViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.dataList.count
+        //return dataList.count
+        // return self.dataList.count
+        return 1;
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let testModel: XPYTestModel = self.dataList[section]
-        return testModel.dataList!.count;
+        return dataList.count
+        //let testModel: XPYTestModel = self.dataList[section]
+        //return testModel.dataList!.count;
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: XPYHomepageTableViewCell? = tableView.dequeueReusableCell(withIdentifier: kXPYHomepageTableViewCellIdentifier) as? XPYHomepageTableViewCell
@@ -64,9 +68,10 @@ extension XPYViewController: UITableViewDataSource {
         }
         //colorWithHexString测试
         //cell?.backgroundColor = XPYUtils.colorWithHexString(hexString: "0x000000", alpha: 1)
-        let testModel: XPYTestModel = self.dataList[indexPath.section]
-        let testSubModel: XPYTestSubModel = testModel.dataList![indexPath.row]
-        cell!.nameLabel.text = testSubModel.typeName
+//        let testModel: XPYTestModel = self.dataList[indexPath.section]
+//        let testSubModel: XPYTestSubModel = testModel.dataList![indexPath.row]
+        
+        cell!.nameLabel.text = dataList[indexPath.row]
         return cell!
     }
 }
@@ -76,6 +81,8 @@ extension XPYViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //tableView.deselectRow(at: indexPath, animated: true)
         print("点击了列表")
+        let lotteryController = XPYLotteryViewController.init()
+        navigationController?.pushViewController(lotteryController, animated: true)
     }
 }
 

@@ -8,12 +8,25 @@
 
 import UIKit
 
-class XPYTest2ViewController: UIViewController {
+protocol XPYTest2ViewControllerProtocol {
+    func test2DidPop()
+}
 
+class XPYTest2ViewController: UIViewController {
+    
+    var delegate: XPYTest2ViewControllerProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        if let delegate = self.delegate {
+            delegate.test2DidPop()
+        }
     }
     
 

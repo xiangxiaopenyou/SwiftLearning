@@ -20,7 +20,12 @@
 		6C348BA5222D4F2900425185 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C348BA3222D4F2900425185 /* LaunchScreen.storyboard */; };
 		6C348BB0222D4F2900425185 /* Swift_LearningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C348BAF222D4F2900425185 /* Swift_LearningTests.swift */; };
 		6C348BBB222D4F2900425185 /* Swift_LearningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C348BBA222D4F2900425185 /* Swift_LearningUITests.swift */; };
+		6C70B01324AC2DA9006B4C79 /* XPYLotteryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C70B01224AC2DA9006B4C79 /* XPYLotteryViewController.swift */; };
+		6C70B01624AC2F84006B4C79 /* XPYNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C70B01524AC2F84006B4C79 /* XPYNavigationViewController.swift */; };
+		6C70B01924AC347B006B4C79 /* XPYMacro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C70B01824AC347B006B4C79 /* XPYMacro.swift */; };
+		6C70B02024B40D01006B4C79 /* Timer+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C70B01F24B40D01006B4C79 /* Timer+Extention.swift */; };
 		6CE85CE022C0B8CA009C5D20 /* XPYMainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE85CDF22C0B8CA009C5D20 /* XPYMainTabBarController.swift */; };
+		6CEA6C6D246BEAD30052E200 /* XPYMineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA6C6C246BEAD30052E200 /* XPYMineTableViewCell.swift */; };
 		6CEAE7C12370266C00E6C43E /* XPYMineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEAE7C02370266C00E6C43E /* XPYMineTableViewController.swift */; };
 		6CEC300422968D8B0001B984 /* XPYLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CEC300322968D8B0001B984 /* XPYLogin.storyboard */; };
 		6CEC30062297BF300001B984 /* XPYLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC30052297BF300001B984 /* XPYLoginViewController.swift */; };
@@ -65,7 +70,12 @@
 		6C348BB6222D4F2900425185 /* Swift-LearningUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-LearningUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C348BBA222D4F2900425185 /* Swift_LearningUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_LearningUITests.swift; sourceTree = "<group>"; };
 		6C348BBC222D4F2900425185 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C70B01224AC2DA9006B4C79 /* XPYLotteryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYLotteryViewController.swift; sourceTree = "<group>"; };
+		6C70B01524AC2F84006B4C79 /* XPYNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYNavigationViewController.swift; sourceTree = "<group>"; };
+		6C70B01824AC347B006B4C79 /* XPYMacro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYMacro.swift; sourceTree = "<group>"; };
+		6C70B01F24B40D01006B4C79 /* Timer+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timer+Extention.swift"; sourceTree = "<group>"; };
 		6CE85CDF22C0B8CA009C5D20 /* XPYMainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYMainTabBarController.swift; sourceTree = "<group>"; };
+		6CEA6C6C246BEAD30052E200 /* XPYMineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYMineTableViewCell.swift; sourceTree = "<group>"; };
 		6CEAE7C02370266C00E6C43E /* XPYMineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYMineTableViewController.swift; sourceTree = "<group>"; };
 		6CEC300322968D8B0001B984 /* XPYLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = XPYLogin.storyboard; sourceTree = "<group>"; };
 		6CEC30052297BF300001B984 /* XPYLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYLoginViewController.swift; sourceTree = "<group>"; };
@@ -144,9 +154,9 @@
 		6C348B99222D4F2700425185 /* Swift-Learning */ = {
 			isa = PBXGroup;
 			children = (
+				6CEC3007229B7CAF0001B984 /* Utils */,
+				6C70B01724AC3425006B4C79 /* Macros */,
 				6C12785C23307A8F007CC4A6 /* Models */,
-				6CED2024229BC1A80027DB94 /* Managers */,
-				6CEC3007229B7CAF0001B984 /* Commons */,
 				6CEC300122968D4C0001B984 /* Storyboards */,
 				6CEC300022968D440001B984 /* Main */,
 				6CEC2FFF229682B10001B984 /* Views */,
@@ -176,15 +186,65 @@
 			path = "Swift-LearningUITests";
 			sourceTree = "<group>";
 		};
-		6CEC2FFE229682A00001B984 /* Controllers */ = {
+		6C70B00F24AC2A20006B4C79 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				6CEAE7C02370266C00E6C43E /* XPYMineTableViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		6C70B01024AC2A29006B4C79 /* Homepage */ = {
 			isa = PBXGroup;
 			children = (
 				6C348B9C222D4F2700425185 /* XPYViewController.swift */,
+				6C70B01224AC2DA9006B4C79 /* XPYLotteryViewController.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		6C70B01124AC2A38006B4C79 /* Login */ = {
+			isa = PBXGroup;
+			children = (
 				6CEC30052297BF300001B984 /* XPYLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6C70B01424AC2F65006B4C79 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				6C70B01524AC2F84006B4C79 /* XPYNavigationViewController.swift */,
 				6CE85CDF22C0B8CA009C5D20 /* XPYMainTabBarController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6C70B01724AC3425006B4C79 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				6C70B01824AC347B006B4C79 /* XPYMacro.swift */,
+			);
+			path = Macros;
+			sourceTree = "<group>";
+		};
+		6C70B01E24B3108A006B4C79 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6C70B01F24B40D01006B4C79 /* Timer+Extention.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6CEC2FFE229682A00001B984 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6C70B01424AC2F65006B4C79 /* Main */,
+				6C70B01124AC2A38006B4C79 /* Login */,
+				6C70B01024AC2A29006B4C79 /* Homepage */,
+				6C70B00F24AC2A20006B4C79 /* Mine */,
 				6C094E49236924EA008EDA86 /* XPYTestViewController.swift */,
 				6C094E4B23692EB5008EDA86 /* XPYTest2ViewController.swift */,
-				6CEAE7C02370266C00E6C43E /* XPYMineTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -193,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				6C09D4E223A0BB6E0054303D /* XPYHomepageTableViewCell.swift */,
+				6CEA6C6C246BEAD30052E200 /* XPYMineTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,12 +275,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		6CEC3007229B7CAF0001B984 /* Commons */ = {
+		6CEC3007229B7CAF0001B984 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6C70B01E24B3108A006B4C79 /* Extension */,
+				6CED2024229BC1A80027DB94 /* Managers */,
 				6CEC3008229B7CE00001B984 /* XPYUtils.swift */,
 			);
-			path = Commons;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		6CED2024229BC1A80027DB94 /* Managers */ = {
@@ -430,14 +493,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CEC30062297BF300001B984 /* XPYLoginViewController.swift in Sources */,
+				6CEA6C6D246BEAD30052E200 /* XPYMineTableViewCell.swift in Sources */,
 				6C348B9D222D4F2700425185 /* XPYViewController.swift in Sources */,
 				6C094E4C23692EB5008EDA86 /* XPYTest2ViewController.swift in Sources */,
 				6C19335E23B1EF5F00E3A0CA /* XPYTestModel.swift in Sources */,
 				6CE85CE022C0B8CA009C5D20 /* XPYMainTabBarController.swift in Sources */,
 				6C09D4E323A0BB6E0054303D /* XPYHomepageTableViewCell.swift in Sources */,
+				6C70B01924AC347B006B4C79 /* XPYMacro.swift in Sources */,
 				6CEAE7C12370266C00E6C43E /* XPYMineTableViewController.swift in Sources */,
+				6C70B01624AC2F84006B4C79 /* XPYNavigationViewController.swift in Sources */,
 				6C348B9B222D4F2700425185 /* XPYAppDelegate.swift in Sources */,
 				6C12785E23307AAF007CC4A6 /* XPYPerson.swift in Sources */,
+				6C70B01324AC2DA9006B4C79 /* XPYLotteryViewController.swift in Sources */,
+				6C70B02024B40D01006B4C79 /* Timer+Extention.swift in Sources */,
 				6CED2026229BCAC10027DB94 /* XPYHTTPManager.swift in Sources */,
 				6C094E4A236924EA008EDA86 /* XPYTestViewController.swift in Sources */,
 				6CEC3009229B7CE00001B984 /* XPYUtils.swift in Sources */,
@@ -618,6 +686,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Swift-Learning/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -636,6 +705,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Swift-Learning/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
