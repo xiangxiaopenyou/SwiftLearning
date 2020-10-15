@@ -7,4 +7,6 @@ target 'Swift-Learning' do
   pod 'SwiftyJSON'
   pod 'SnapKit'
   pod 'ObjectMapper'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

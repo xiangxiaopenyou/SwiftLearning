@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-let kXPYHomepageTableViewCellIdentifier = "XPYHomepageTableViewCellIdentifier"
+private let kXPYHomepageTableViewCellIdentifier = "XPYHomepageTableViewCellIdentifier"
 
 class XPYViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!

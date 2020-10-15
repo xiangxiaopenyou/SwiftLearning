@@ -1,28 +1,42 @@
 PODS:
   - Alamofire (4.8.2)
   - ObjectMapper (3.5.1)
+  - RxCocoa (5.1.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.1.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.1.1)
   - SnapKit (4.2.0)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - ObjectMapper
+  - RxCocoa
+  - RxSwift
   - SnapKit
   - SwiftyJSON
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Alamofire
     - ObjectMapper
+    - RxCocoa
+    - RxRelay
+    - RxSwift
     - SnapKit
     - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
+  RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
+  RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: d5eda6c637bb6eb89cd735015ec4c2489de243f3
+PODFILE CHECKSUM: 4ec069157b7df7a1e408ccc042ac9da416f65503
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.9.1

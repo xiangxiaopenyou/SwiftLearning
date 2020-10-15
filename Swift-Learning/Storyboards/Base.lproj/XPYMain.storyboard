@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZId-gg-3eF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZId-gg-3eF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,6 +26,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2Zv-f8-wG4" secondAttribute="bottom" id="WRJ-zO-pRo"/>
@@ -32,7 +34,6 @@
                             <constraint firstItem="2Zv-f8-wG4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pFd-Ea-uQe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Zv-f8-wG4" secondAttribute="trailing" id="xQW-YZ-s5X"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="主页" id="df7-Db-KAu"/>
                     <connections>
@@ -89,9 +90,9 @@
                     <view key="view" contentMode="scaleToFill" id="BrW-Cy-OlL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Ieh-4x-cT5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="3Nf-ki-PlX" appends="YES" id="8qC-Yy-YRK"/>
                         </connections>
@@ -108,35 +109,6 @@
             <point key="canvasLocation" x="293" y="-133"/>
         </scene>
         <!--我的-->
-        <scene sceneID="tI5-81-DsF">
-            <objects>
-                <tableViewController id="Hf7-2R-iAA" customClass="XPYMineTableViewController" customModule="Swift_Learning" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EKw-m6-Dzf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="kXPYMineTableCell" id="hTF-b9-aEg">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hTF-b9-aEg" id="YKX-gB-CzG">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Hf7-2R-iAA" id="VW9-kg-mMo"/>
-                            <outlet property="delegate" destination="Hf7-2R-iAA" id="YtS-kM-vUo"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="我的" id="mea-l2-KtG"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x7C-8Z-41p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-499" y="283"/>
-        </scene>
-        <!--我的-->
         <scene sceneID="mqH-PH-X1U">
             <objects>
                 <navigationController id="0fa-To-Wv4" sceneMemberID="viewController">
@@ -146,12 +118,28 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Hf7-2R-iAA" kind="relationship" relationship="rootViewController" id="FvV-XX-JUk"/>
+                        <segue destination="E0a-wr-Jqx" kind="relationship" relationship="rootViewController" id="bzC-8K-zRF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Vv-B6-7dr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-909" y="76"/>
+            <point key="canvasLocation" x="-965" y="266"/>
+        </scene>
+        <!--我的-->
+        <scene sceneID="0wE-E0-rNs">
+            <objects>
+                <viewController id="E0a-wr-Jqx" customClass="MineHomepageViewController" customModule="Swift_Learning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ruq-U4-yiY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="TaV-LJ-syf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的" id="SEu-pt-O76"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CgT-Iw-0li" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-274" y="266"/>
         </scene>
         <!--首页-->
         <scene sceneID="wTB-Tz-fLp">
@@ -171,4 +159,9 @@
             <point key="canvasLocation" x="-886" y="-766"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

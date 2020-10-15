@@ -64,10 +64,9 @@ class XPYLotteryViewController: UIViewController {
             button.setTitle(item, for: .normal)
             button.setTitleColor(.black, for: .normal)
             button.titleLabel?.font = UIFont.systemFont(ofSize: 14);
+            // 这里设置了两张不同图片作为高亮和普通状态的背景
             button.setBackgroundImage(UIImage(named: "lottery_card_normal"), for: .normal)
             button.setBackgroundImage(UIImage(named: "lottery_card_highlighted"), for: .highlighted)
-            // 默认高亮状态
-            button.isHighlighted = true
             if index < 4 {
                 // 第一排正序
                 button.frame = CGRect(x: originX, y: originY, width: lotteryItemWidth, height: lotteryItemHeight)
@@ -102,7 +101,9 @@ class XPYLotteryViewController: UIViewController {
     /// 开始抽奖
     /// - Parameter sender: startButton
     @objc private func startAction(_ sender: UIButton) {
+        // 设置开始按钮不可点击
         sender.isEnabled = false
+        // 设置开始时选中的奖项
         for (index, button) in itemButtons.enumerated() {
             if index == selectedIndex {
                 button.isHighlighted = true
@@ -111,12 +112,13 @@ class XPYLotteryViewController: UIViewController {
                 button.isHighlighted = false
             }
         }
+        // 开始默认快速转动圈
         firstCyclesLottery(sender)
     }
     
     // MARK: Private methods
     
-    /// 设置选中按钮
+    /// 设置选中奖项高亮
     private func selectItem() {
         if selectedButton != nil {
             selectedButton.isHighlighted = false
@@ -126,7 +128,7 @@ class XPYLotteryViewController: UIViewController {
     }
     
     
-    /// 抽奖开始快速转动圈
+    /// 抽奖开始默认快速转动圈（这里设置了三圈）
     /// - Parameter sender: startButton
     private func firstCyclesLottery(_ sender: UIButton) {
         weak var weakSelf = self
