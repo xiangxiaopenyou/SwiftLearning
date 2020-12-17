@@ -37,3 +37,13 @@ class XPYTestSubModel: Mappable {
     }
 }
 
+struct TestStruct: Mappable {
+    var id: String?;
+    var name: String?;
+    init?(map: Map) {
+    }
+    
+    mutating func mapping(map: Map) {
+    }
+}
+

@@ -20,7 +20,7 @@ class MineHomepageViewController: UIViewController {
     }()
     
     let disposeBag = DisposeBag()
-    let dataSource = Observable.just(["头像", "个人信息", "设置"])
+    let dataSource = Observable<Array>.just(["头像", "个人信息", "设置"])
     
     override func viewDidLoad() {
         super.viewDidLoad()

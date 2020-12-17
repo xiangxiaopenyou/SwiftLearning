@@ -13,6 +13,7 @@
 		6C09D4E323A0BB6E0054303D /* XPYHomepageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C09D4E223A0BB6E0054303D /* XPYHomepageTableViewCell.swift */; };
 		6C12785E23307AAF007CC4A6 /* XPYPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C12785D23307AAF007CC4A6 /* XPYPerson.swift */; };
 		6C19335E23B1EF5F00E3A0CA /* XPYTestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C19335D23B1EF5F00E3A0CA /* XPYTestModel.swift */; };
+		6C202288255146060036D31A /* algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C202287255146060036D31A /* algorithms.swift */; };
 		6C348B9B222D4F2700425185 /* XPYAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C348B9A222D4F2700425185 /* XPYAppDelegate.swift */; };
 		6C348B9D222D4F2700425185 /* XPYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C348B9C222D4F2700425185 /* XPYViewController.swift */; };
 		6C348BA0222D4F2700425185 /* XPYMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C348B9E222D4F2700425185 /* XPYMain.storyboard */; };
@@ -57,6 +58,7 @@
 		6C09D4E223A0BB6E0054303D /* XPYHomepageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYHomepageTableViewCell.swift; sourceTree = "<group>"; };
 		6C12785D23307AAF007CC4A6 /* XPYPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYPerson.swift; sourceTree = "<group>"; };
 		6C19335D23B1EF5F00E3A0CA /* XPYTestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYTestModel.swift; sourceTree = "<group>"; };
+		6C202287255146060036D31A /* algorithms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = algorithms.swift; sourceTree = "<group>"; };
 		6C348B97222D4F2700425185 /* Swift-Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Learning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C348B9A222D4F2700425185 /* XPYAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYAppDelegate.swift; sourceTree = "<group>"; };
 		6C348B9C222D4F2700425185 /* XPYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPYViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		6C202286255145D60036D31A /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				6C202287255146060036D31A /* algorithms.swift */,
+			);
+			path = Algorithms;
+			sourceTree = "<group>";
+		};
 		6C348B8E222D4F2700425185 = {
 			isa = PBXGroup;
 			children = (
@@ -154,13 +164,13 @@
 		6C348B99222D4F2700425185 /* Swift-Learning */ = {
 			isa = PBXGroup;
 			children = (
-				6CEC3007229B7CAF0001B984 /* Utils */,
-				6C70B01724AC3425006B4C79 /* Macros */,
+				6CEC300022968D440001B984 /* Main */,
+				6CEC2FFE229682A00001B984 /* Controllers */,
+				6CEC2FFF229682B10001B984 /* Views */,
 				6C12785C23307A8F007CC4A6 /* Models */,
 				6CEC300122968D4C0001B984 /* Storyboards */,
-				6CEC300022968D440001B984 /* Main */,
-				6CEC2FFF229682B10001B984 /* Views */,
-				6CEC2FFE229682A00001B984 /* Controllers */,
+				6C70B01724AC3425006B4C79 /* Macros */,
+				6CEC3007229B7CAF0001B984 /* Utils */,
 				6C348BA1222D4F2900425185 /* Assets.xcassets */,
 				6C348BA3222D4F2900425185 /* LaunchScreen.storyboard */,
 				6C348BA6222D4F2900425185 /* Info.plist */,
@@ -278,6 +288,7 @@
 		6CEC3007229B7CAF0001B984 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6C202286255145D60036D31A /* Algorithms */,
 				6C70B01E24B3108A006B4C79 /* Extension */,
 				6CED2024229BC1A80027DB94 /* Managers */,
 				6CEC3008229B7CE00001B984 /* XPYUtils.swift */,
@@ -365,9 +376,9 @@
 		6C348B8F222D4F2700425185 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = XPY;
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = xiang;
 				TargetAttributes = {
 					6C348B96222D4F2700425185 = {
@@ -490,6 +501,7 @@
 				6C09D4E323A0BB6E0054303D /* XPYHomepageTableViewCell.swift in Sources */,
 				6C70B01924AC347B006B4C79 /* XPYMacro.swift in Sources */,
 				6C70B01624AC2F84006B4C79 /* XPYNavigationViewController.swift in Sources */,
+				6C202288255146060036D31A /* algorithms.swift in Sources */,
 				6C348B9B222D4F2700425185 /* XPYAppDelegate.swift in Sources */,
 				6C12785E23307AAF007CC4A6 /* XPYPerson.swift in Sources */,
 				6C70B01324AC2DA9006B4C79 /* XPYLotteryViewController.swift in Sources */,
@@ -578,6 +590,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -639,6 +652,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -675,7 +689,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Swift-Learning/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -694,7 +708,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Swift-Learning/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
