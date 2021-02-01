@@ -98,11 +98,18 @@ struct Stack: StackProtocol {
     }
     
     mutating func popStack(element: Int) -> Int? {
-        if isEmpty {
-            return nil
-        } else {
-            return stack.popLast()
-        }
+        return stack.popLast()
     }
     
+}
+
+func findRepeatNumber(_ nums: [Int]) -> Int {
+    var container = Set<Int>()
+    for (_, value) in nums.enumerated() {
+        if container.contains(value) {
+            return value
+        }
+        container.insert(value)
+    }
+    return 0
 }
